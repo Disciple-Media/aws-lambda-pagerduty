@@ -5,9 +5,9 @@ PagerDuty = require('pagerduty');
 exports.handler = function(event, context) {
   console.log(JSON.stringify(event.Records[0].Sns));
   pager = new PagerDuty({
-    serviceKey: 'PAGER_DUTY_API_KEY_HERE' // required
+    serviceKey: process.env.PAGER_DUTY_API_KEY // required
   });
-  
+
   pager.create({
     description: event.Records[0].Sns.Subject,
     details: JSON.parse(event.Records[0].Sns.Message),
