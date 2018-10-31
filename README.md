@@ -1,4 +1,4 @@
-##Setup
+## Setup
 
 * Create a service on pagerduty, put API key in aws-lambda-pagerduty.js.
 * ```make```
